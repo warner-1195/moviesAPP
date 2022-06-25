@@ -1,0 +1,23 @@
+<h1 class="mt-5 title-background">Comedy Movies</h1>
+<button class="btn btn-danger ">
+    <a href="http://localhost:4200/movies/movies-list">
+        Back
+    </a>
+</button>
+
+<mat-divider class="mt-3"></mat-divider>
+<br>
+
+<mat-card *ngFor="let movie of comedyMovies; let i=index" class="size">
+
+    <mat-card-header>
+        <mat-card-title><strong>{{comedyMovies[i].title}}</strong></mat-card-title>
+        <mat-card-subtitle><strong>{{comedyMovies[i].release_date}}</strong></mat-card-subtitle>
+        <mat-card-subtitle><strong>{{comedyMovies[i].overview}}</strong></mat-card-subtitle>
+    </mat-card-header>
+ 
+</mat-card>
+<br>
+
+
+

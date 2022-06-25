@@ -1,0 +1,90 @@
+<mat-sidenav-container fullscreen > 
+
+    <mat-sidenav #sidenav   >
+        
+
+        <mat-toolbar>
+            <h3>Categories</h3>
+
+            <button mat-icon-button 
+                    class="margin"
+                    (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+        </mat-toolbar >
+                
+            <mat-nav-list>
+                
+                <a  routerLink="action-movies"
+                
+                    
+                    mat-list-item 
+                    class="mt-2 "
+                   (click)="sidenav.toggle()" >
+                   <span>Action</span>
+                </a>
+
+                <a  routerLink="horror-movies"
+                    mat-list-item 
+                    class="mt-2 "
+                   (click)="sidenav.toggle()" >
+                   <span>Horrorr</span>
+                </a>
+
+                <a  routerLink="drama-movies"
+                    mat-list-item 
+                    class="mt-2 "
+                   (click)="sidenav.toggle()" >
+                   <span>Drama</span>
+                </a>
+
+                <a  routerLink="comedi-movies"
+                    mat-list-item 
+                    class="mt-2 "
+                   (click)="sidenav.toggle()" >
+                   <span>Comedy</span>
+                </a>
+
+            </mat-nav-list>
+
+    </mat-sidenav>
+   
+    
+
+    <mat-toolbar>
+        <h1>Categories</h1>
+
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>  
+
+       
+       
+        <button mat-button color="red"
+                class="position"
+                (click)="logout()">
+                <strong>{{user.name}}</strong> Logout
+        </button>
+
+    </mat-toolbar>
+
+    <h1 class="mt-5 title title-background">MOVIES LIST</h1>
+<mat-divider></mat-divider>
+<br>
+
+<mat-card *ngFor="let movie of lastestMovies; let i=index" class="size">
+
+    <mat-card-header>
+        <mat-card-title><strong> {{ lastestMovies[i].title }}</strong></mat-card-title>
+        <mat-card-subtitle><strong> {{ lastestMovies[i].release_date }} </strong></mat-card-subtitle>
+        <mat-card-subtitle><strong>{{lastestMovies[i].overview}}</strong></mat-card-subtitle>
+    </mat-card-header>
+    
+</mat-card>
+
+</mat-sidenav-container>
+
+
+
+

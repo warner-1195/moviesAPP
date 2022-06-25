@@ -1,0 +1,47 @@
+<form [formGroup]="loginForm"
+      (ngSubmit)="login()">
+  <div class="row">
+    <div class="col">
+
+      <mat-card class="position-absolute top-50 start-50 translate-middle size">
+
+        <h1>Login</h1>
+
+        <mat-form-field>
+
+          <mat-label>Email</mat-label>
+          <input class="input-color"
+                 matInput type="text"
+                 formControlName="email">
+        </mat-form-field>
+        <div class="alert alert-danger"
+              *ngIf="!emailValid()">
+           <span></span>
+          </div>
+        <br>
+      
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input class="input-color"
+                 matInput type="password"
+                 formControlName="password">
+        </mat-form-field>
+        <div class="alert alert-danger"
+              *ngIf="!passwordValid()">
+           <span>required</span>
+          </div>
+        <br>
+      
+        <button class="btn btn-warning"
+                type="submit"
+                [disabled]="loginForm.invalid">
+              Login
+        </button>
+        <a href="http://localhost:4200/auth/register" class="float-end mt-2">Register now </a>
+      
+      </mat-card>
+     
+    </div>
+</div>
+</form>
+

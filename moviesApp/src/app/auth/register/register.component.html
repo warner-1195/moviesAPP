@@ -1,0 +1,87 @@
+
+<form   autocomplete="off"
+        [formGroup]="registerForm"
+        (ngSubmit)="register()">
+    <div class="row">
+        <div class="col-3">
+            <div >
+                <mat-card class="position-absolute top-50 start-50 translate-middle size">
+                    
+                    <h2>Register Form</h2>
+
+                    <mat-form-field>
+                        <mat-label>Name</mat-label>
+                        <input class="form-control input-color"
+                               matInput type="text"
+                               formControlName="name">
+                      </mat-form-field>
+                      <div class="form-text alert alert-danger"
+                           *ngIf="inputNoValid('name')">
+                         <span>
+                          enter your name
+                        </span>
+                        </div>
+                      <br>
+                      <mat-form-field>
+                        <mat-label>Last Names</mat-label>
+                        <input class="form-control input-color" 
+                               matInput type="text"
+                               formControlName="lastname">
+                      </mat-form-field>
+                      <div class="alert alert-danger"
+                           *ngIf="inputNoValid('lastname')">
+                           <span>
+                            you must enter both last names
+                           </span>
+                        </div>
+                      <br>
+                      <mat-form-field>
+                        <mat-label>E-mail</mat-label>
+                        <input class="form-control input-color"
+                               formControlName="email"
+                               matInput type="email">
+                      </mat-form-field>
+                      <div class="alert alert-danger"
+                           *ngIf="inputNoValid('email')"> 
+                           <span>
+                            the format of this email is not valid
+                          </span>
+                        </div>
+                      <br>
+                      <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input class="form-control input-color"
+                               formControlName="password"
+                               matInput type="password">
+                      </mat-form-field>
+                      <div class="alert alert-danger"
+                           *ngIf="inputNoValid('password')">
+                          <span>
+                            the password must be greater than 7 characters
+                          </span>
+                        </div>
+                      <br>
+                      <button class="btn btn-warning float-end mt-3"
+                              type="submit"
+                              [disabled]="registerForm.invalid">
+                        Register
+                      </button>
+
+                      <span class="center">Do you already have <br>an account?</span>
+                      <br>
+                      <button class="btn btn-danger mt-3"
+                              routerLink="/auth">
+                              Press here
+                      </button>
+                      
+
+                      
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+
+
+</form>
+
